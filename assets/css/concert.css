@@ -1,0 +1,84 @@
+/* Concert Template Styles */
+
+.concert-meta {
+  margin-top: calc(var(--baseline) * 4);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--baseline) * 2);
+  font-size: 1.1em;
+}
+
+.concert-meta__date,
+.concert-meta__time,
+.concert-meta__venue,
+.concert-meta__city {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.concert-meta svg {
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.concert-meta__venue {
+  font-weight: 600;
+}
+
+.concert-program {
+  background: var(--bg-light);
+  border-left: 4px solid var(--color);
+  padding: calc(var(--baseline) * 8);
+  margin: calc(var(--baseline) * 12) 0;
+  border-radius: calc(var(--border-radius) * 2);
+}
+
+.concert-program h2 {
+  margin-top: 0;
+  margin-bottom: calc(var(--baseline) * 4);
+  color: var(--color);
+}
+
+.concert-program__content ul,
+.concert-program__content ol {
+  list-style: inside;
+  margin-left: 0;
+}
+
+.concert-tickets {
+  text-align: center;
+  margin: calc(var(--baseline) * 12) 0;
+}
+
+.concert-tickets__button {
+  display: inline-block;
+  padding: calc(var(--baseline) * 4) calc(var(--baseline) * 8);
+  background: var(--color);
+  color: var(--white);
+  border-radius: calc(var(--border-radius) * 2);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+}
+
+.concert-tickets__button:hover {
+  background: var(--headings);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media all and (min-width: 37.5em) {
+  .concert-meta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: calc(var(--baseline) * 3) calc(var(--baseline) * 6);
+  }
+  
+  .concert-meta__city::before {
+    content: "•";
+    margin-right: 0.75rem;
+    opacity: 0.5;
+  }
+}
